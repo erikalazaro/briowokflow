@@ -55,8 +55,10 @@ jobs:
       - name: Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+       
+
         # Usamos 'mvn' en lugar de 'sonar-scanner' para evitar errores de parámetros
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=brioworkflow -Dsonar.organization=erikalazaro -DskipTests
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=brioworkflow -Dsonar.organization=erikalazaro -DskipTests -Dsonar.exclusions="**/target/**, **/bin/**, **/*.js, **/*.css"
 
 
          

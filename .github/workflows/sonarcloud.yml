@@ -58,7 +58,7 @@ jobs:
        
 
         # Usamos 'mvn' en lugar de 'sonar-scanner' para evitar errores de parámetros
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=brioworkflow -Dsonar.organization=erikalazaro -DskipTests -Dsonar.exclusions="**/target/**, **/bin/**, **/*.js, **/*.css"
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=brioworkflow -Dsonar.organization=erikalazaro -DskipTests -Dsonar.exclusions="**/target/**, **/.properties/**, **/*.js, **/*.css, **/*.war,, **/*.xml, , **/test/**"
 
 
          

@@ -1,0 +1,288 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.briomax.briobpm</groupId>
+	<artifactId>BackBrioBPM</artifactId>
+	<version>1.0</version>
+	<packaging>pom</packaging>
+	<name>BackBrioBPM</name>
+	<description>Back Briomax BPM</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.2.3.RELEASE</version>
+		<relativePath />
+	</parent>
+
+	<modules>
+		<module>UtilsBrioBPM</module>
+		<module>DtosBrioBPM</module>
+		<module>PersistenceBrioBPM</module>
+		<module>BusinessBrioBPM</module>
+		<module>ServicesBrioBPM</module>
+	</modules>
+
+	<properties>
+		<vendor>Briomax Consulting</vendor>
+		<maven.build.timestamp.format>dd-MM-yyyy HH:mm</maven.build.timestamp.format>
+		<timestamp>${maven.build.timestamp}</timestamp>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<sqljdbc.version>8.2.1.jre8</sqljdbc.version>
+		<lombok-version>1.18.10</lombok-version>
+	</properties>
+
+	<licenses>
+		<license>
+			<name>Copyright All Rights Reserved.</name>
+			<url>http://www.briomax.com/</url>
+		</license>
+	</licenses>
+	<organization>
+		<name>Briomax Consulting</name>
+		<url>http://www.briomax.com/</url>
+	</organization>
+
+	<repositories>
+		<repository>
+			<id>BPM Briomax_repo</id>
+			<name>BPM Briomax Maven Repository</name>
+			<url>https://brioclouddev-josera.developer.ocp.oraclecloud.com/profile/brioclouddev-josera/s/brioclouddev-josera_bpm-briomax_12353/maven/</url>
+		</repository>
+	</repositories>
+
+	<distributionManagement>
+		<repository>
+			<id>BPM Briomax_repo</id>
+			<name>BPM Briomax Maven Repository</name>
+			<url>https://brioclouddev-josera.developer.ocp.oraclecloud.com/profile/brioclouddev-josera/s/brioclouddev-josera_bpm-briomax_12353/maven/</url>
+		</repository>
+		<snapshotRepository>
+			<id>BPM Briomax_repo</id>
+			<name>BPM BriomaxMaven Repository</name>
+			<url>https://brioclouddev-josera.developer.ocp.oraclecloud.com/profile/brioclouddev-josera/s/brioclouddev-josera_bpm-briomax_12353/maven/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<profiles>
+		<profile>
+			<id>local</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<spring.profiles.active>local</spring.profiles.active>
+				<skipSpringBootRepackage>false</skipSpringBootRepackage>
+			</properties>
+		</profile>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<spring.profiles.active>dev</spring.profiles.active>
+				<skipSpringBootRepackage>false</skipSpringBootRepackage>
+			</properties>
+		</profile>
+		<profile>
+			<id>qa</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<spring.profiles.active>qa</spring.profiles.active>
+				<skipSpringBootRepackage>false</skipSpringBootRepackage>
+			</properties>
+		</profile>
+		<profile>
+			<id>protos</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<spring.profiles.active>protos</spring.profiles.active>
+				<skipSpringBootRepackage>false</skipSpringBootRepackage>
+			</properties>
+		</profile>
+		<profile>
+			<id>prod</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<spring.profiles.active>prod</spring.profiles.active>
+				<skipSpringBootRepackage>false</skipSpringBootRepackage>
+			</properties>
+		</profile>
+	</profiles>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- ================================ Brio BPM  ======================================== -->
+			<dependency>
+				<groupId>com.briomax.briobpm</groupId>
+				<artifactId>DtosBrioBPM</artifactId>
+				<version>1.0</version>
+			</dependency>
+			<dependency>
+				<groupId>com.briomax.briobpm</groupId>
+				<artifactId>UtilsBrioBPM</artifactId>
+				<version>1.0</version>
+			</dependency>
+			<dependency>
+				<groupId>com.briomax.briobpm</groupId>
+				<artifactId>PersistenceBrioBPM</artifactId>
+				<version>1.0</version>
+			</dependency>
+			<dependency>
+				<groupId>com.briomax.briobpm</groupId>
+				<artifactId>PersistenceBrioBPM</artifactId>
+				<version>1.0</version>
+				<type>test-jar</type>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.briomax.briobpm</groupId>
+				<artifactId>BusinessBrioBPM</artifactId>
+				<version>1.0</version>
+			</dependency>
+
+			<!-- ================================ SQL Server  ====================================== -->
+			<dependency>
+				<groupId>com.microsoft.sqlserver</groupId>
+				<artifactId>mssql-jdbc</artifactId>
+				<version>${sqljdbc.version}</version>
+			</dependency>
+			
+			<!-- ================================	SpringDoc open API	============================== -->
+			<!-- 
+			<dependency>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-ui</artifactId>
+				<version>1.4.3</version>
+			</dependency>
+			 -->
+			<dependency>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-core</artifactId>
+				<version>1.1.49</version>
+			</dependency>
+			<dependency>
+				<groupId>io.swagger.core.v3</groupId>
+				<artifactId>swagger-annotations</artifactId>
+				<version>2.0.10</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.json</groupId>
+				<artifactId>json</artifactId>
+				<version>20200518</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<!-- ================================ Lombok       ===================================== -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+		<!-- ================================ Spring Boot  ===================================== -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!--  
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<compilerArgument>-Xlint:unchecked</compilerArgument>
+				</configuration>
+			</plugin>
+			 <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+	<developers>
+		<developer>
+			<id>jalfonso</id>
+			<name>Jose Ramon Alfonso A.</name>
+			<email>jalfonso@briomax.com</email>
+			<organization>
+				Copyright  (c)  2009 - 2020, BrioMax Consulting S.A. de C.V. All Rights Reserved.
+			</organization>
+			<organizationUrl>http://www.briomax.com/</organizationUrl>
+			<roles>
+				<role>Arquitecto de Software</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>frodriguez</id>
+			<name>Francisco Rodríguez Arenas</name>
+			<email>frodriguez@briomax.com</email>
+			<organization>
+				Copyright  (c)  2009 - 2020, BrioMax Consulting S.A. de C.V. All Rights Reserved.
+			</organization>
+			<organizationUrl>http://www.briomax.com/</organizationUrl>
+			<roles>
+				<role>Desarrollador Base de Datos</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>evazquez</id>
+			<name>Erika Vasquez Lazaro</name>
+			<email>evazquez@briomax.com</email>
+			<organization>
+				Copyright  (c)  2009 - 2020, BrioMax Consulting S.A. de C.V. All Rights Reserved.
+			</organization>
+			<organizationUrl>http://www.briomax.com/</organizationUrl>
+			<roles>
+				<role>Analista Desarrolador WEB</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>rolvera</id>
+			<name>Rigoberto Olvera Cruz</name>
+			<email>rolvera@briomax.com</email>
+			<organization>
+				Copyright  (c)  2009 - 2020, BrioMax Consulting S.A. de C.V. All Rights Reserved.
+			</organization>
+			<organizationUrl>http://www.briomax.com/</organizationUrl>
+			<roles>
+				<role>Analista Desarrollador Java</role>
+			</roles>
+		</developer>
+	</developers>
+
+</project>

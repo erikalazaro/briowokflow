@@ -1,0 +1,37 @@
+{"properties": [
+  {
+    "name": "brio.bpm.entidad",
+    "type": "java.lang.String",
+    "description": "A description for 'brio.bpm.entidad'"
+  },
+  {
+    "name": "brio.bpm.localidad",
+    "type": "java.lang.String",
+    "description": "A description for 'brio.bpm.localidad'"
+  },
+  {
+    "name": "brio.bpm.idioma",
+    "type": "java.lang.String",
+    "description": "A description for 'brio.bpm.idioma'"
+  },
+  {
+    "name": "brio.bpm.user",
+    "type": "java.lang.String",
+    "description": "A description for 'brio.bpm.user'"
+  },
+  {
+    "name": "brio.bpm.password",
+    "type": "java.lang.String",
+    "description": "A description for 'brio.bpm.password'"
+  },
+  {
+    "name": "brio.bpm.rol",
+    "type": "java.lang.String",
+    "description": "A description for 'brio.bpm.rol'"
+  },
+  {
+    "name": "spring.datasource.jdbc-url",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.jdbc-url'"
+  }
+]}

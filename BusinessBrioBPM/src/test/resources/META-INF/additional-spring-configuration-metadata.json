@@ -1,0 +1,57 @@
+{"properties": [
+  {
+    "name": "spring.datasource.jdbc-url",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.jdbc-url'"
+  },
+  {
+    "name": "brio.bpm.entidad",
+    "type": "java.lang.String",
+    "description": "A description for 'brio.bpm.entidad'"
+  },
+  {
+    "name": "brio.bpm.localidad",
+    "type": "java.lang.String",
+    "description": "A description for 'brio.bpm.localidad'"
+  },
+  {
+    "name": "brio.bpm.idioma",
+    "type": "java.lang.String",
+    "description": "A description for 'brio.bpm.idioma'"
+  },
+  {
+    "name": "brio.bpm.rol",
+    "type": "java.lang.String",
+    "description": "A description for 'brio.bpm.rol'"
+  },
+  {
+    "name": "brio.bpm.mail.from",
+    "type": "java.lang.String",
+    "description": "A description for 'brio.bpm.mail.from'"
+  },
+  {
+    "name": "brio.bpm.test.proceso",
+    "type": "java.lang.String",
+    "description": "A description for 'brio.bpm.test.proceso'"
+  },
+  {
+    "name": "brio.bpm.test.version",
+    "type": "java.lang.String",
+    "description": "A description for 'brio.bpm.test.version'"
+  },
+  {
+    "name": "brio.bpm.temporizador.actividades.job.cron",
+    "type": "java.lang.String",
+    "description": "A description for 'brio.bpm.temporizador.actividades.job.cron'"
+  },
+  {
+    "name": "brio.bpm.temporizador.vigenciadocumentos.job.cron",
+    "type": "java.lang.String",
+    "description": "A description for 'brio.bpm.temporizador.vigenciadocumentos.job.cron'"
+  },
+  {
+    "name": "brio.bpm.temporizador.procesamensajes.job.cron",
+    "type": "java.lang.String",
+    "description": "A description for 'brio.bpm.temporizador.procesamensajes.job.cron'"
+  }
+]}

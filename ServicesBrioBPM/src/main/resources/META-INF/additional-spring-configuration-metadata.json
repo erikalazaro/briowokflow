@@ -1,0 +1,72 @@
+{"properties": [
+  {
+    "name": "spring.datasource.jdbc-url",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.jdbc-url'"
+  },
+  {
+    "name": "brio.bpm.entidad",
+    "type": "java.lang.String",
+    "description": "A description for 'brio.bpm.entidad'"
+  },
+  {
+    "name": "brio.bpm.localidad",
+    "type": "java.lang.String",
+    "description": "A description for 'brio.bpm.localidad'"
+  },
+  {
+    "name": "brio.bpm.idioma",
+    "type": "java.lang.String",
+    "description": "A description for 'brio.bpm.idioma'"
+  },
+  {
+    "name": "brio.bpm.rol",
+    "type": "java.lang.String",
+    "description": "A description for 'brio.bpm.rol'"
+  },
+  {
+    "name": "brio.bpm.mail.from",
+    "type": "java.lang.String",
+    "description": "A description for 'brio.bpm.mail.from'"
+  },
+  {
+    "name": "application-description",
+    "type": "java.lang.String",
+    "description": "A description for 'application-description'"
+  },
+  {
+    "name": "application-version",
+    "type": "java.lang.String",
+    "description": "A description for 'application-version'"
+  },
+  {
+    "name": "springdoc.api-docs.path",
+    "type": "java.lang.String",
+    "description": "A description for 'springdoc.api-docs.path'"
+  },
+  {
+    "name": "springdoc.api-docs.enabled",
+    "type": "java.lang.String",
+    "description": "A description for 'springdoc.api-docs.enabled'"
+  },
+  {
+    "name": "springdoc.swagger-ui.enabled",
+    "type": "java.lang.String",
+    "description": "A description for 'springdoc.swagger-ui.enabled'"
+  },
+  {
+    "name": "brio.bpm.temporizador.actividades.job.cron",
+    "type": "java.lang.String",
+    "description": "A description for 'brio.bpm.temporizador.actividades.job.cron'"
+  },
+  {
+    "name": "brio.bpm.temporizador.vigenciadocumentos.job.cron",
+    "type": "java.lang.String",
+    "description": "A description for 'brio.bpm.temporizador.vigenciadocumentos.job.cron'"
+  },
+  {
+    "name": "brio.bpm.temporizador.procesamensajes.job.cron",
+    "type": "java.lang.String",
+    "description": "A description for 'brio.bpm.temporizador.procesamensajes.job.cron'"
+  }
+]}
